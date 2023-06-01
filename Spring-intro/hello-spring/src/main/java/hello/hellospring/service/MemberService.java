@@ -9,25 +9,35 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+//@Service
 // @Component , Service 어노테이션 안에 Component 포함
 public class MemberService { //command + shift + T : test class 생성
 
     private final MemberRepository memberRepository;
 
-    @Autowired
+    //@Autowired
+    // 생성자 주입
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
+
+
+    // setter 주입
+//    @Autowired
+//    public void setMemberService(MemberService memberService){
+//        this.memberService = memberService;
+//        // memberService.setMemberService();
+//
+//    }
 
     /**
      * 회원 가입
      */
     public Long join(Member member){
         validateDuplicateMember(member); // control + T : Extract Methods
-
         memberRepository.save(member);
         return member.getId();
+
     }
 
     private void validateDuplicateMember(Member member) {
