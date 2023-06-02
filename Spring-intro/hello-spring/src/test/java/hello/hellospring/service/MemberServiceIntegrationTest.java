@@ -23,11 +23,11 @@ public class MemberServiceIntegrationTest {
     MemberRepository memberRepository;
 
     @Test
-    @Commit
+//    @Commit
     void 회원가입() {
         //given
         Member member = new Member();
-        member.setName("AwesomeJPA");
+        member.setName("AwesomeJPAData");
 
         //when
         Long saveId = memberService.join(member);
