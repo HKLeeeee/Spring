@@ -5,11 +5,13 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-//@Service
+@Transactional
+//@Service -> spring bean 자동 설정
 // @Component , Service 어노테이션 안에 Component 포함
 public class MemberService { //command + shift + T : test class 생성
 
