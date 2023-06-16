@@ -2,10 +2,7 @@ package hello.servlet.web.frontcontroller.v5;
 
 import hello.servlet.web.frontcontroller.ModelView;
 import hello.servlet.web.frontcontroller.MyView;
-import hello.servlet.web.frontcontroller.v3.ControllerV3;
-import hello.servlet.web.frontcontroller.v3.controller.MemberFormControllerV3;
-import hello.servlet.web.frontcontroller.v3.controller.MemberListControllerV3;
-import hello.servlet.web.frontcontroller.v3.controller.MemberSaveControllerV3;
+import hello.servlet.web.frontcontroller.v3.controller.*;
 import hello.servlet.web.frontcontroller.v4.controller.*;
 import hello.servlet.web.frontcontroller.v5.adapter.ControllerV3HandlerAdapter;
 import hello.servlet.web.frontcontroller.v5.adapter.ControllerV4HandlerAdapter;
@@ -78,7 +75,7 @@ public class FrontControllerServletV5 extends HttpServlet {
         }
 
         MyHandlerAdapter adapter = getHandlerAdapter(handler); // 핸들러 어댑터 조회
-        ModelView mv = adapter.ㅠhandle(request, response, handler); // 찾은 핸들러 어댑터로 처리, controller process 실행
+        ModelView mv = adapter.handle(request, response, handler); // 찾은 핸들러 어댑터로 처리, controller process 실행
         // 모델뷰 반환. 모델 뷰 - 모델과 뷰 정보를 모두 가지고 있음
 
         String viewName = mv.getViewName();
