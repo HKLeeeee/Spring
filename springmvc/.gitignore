@@ -1,7 +1,3 @@
-study_materials/
-h2/
-*.pdf
-.DS_Store
 HELP.md
 .gradle
 build/
