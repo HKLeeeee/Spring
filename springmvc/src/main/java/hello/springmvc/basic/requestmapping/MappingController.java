@@ -55,7 +55,7 @@ public class MappingController {
      * headers="mode",
      * headers="!mode"
      * headers="mode=debug"
-     * headers="mode!=debug" (! = )
+     * headers="mode!=debug"
      */
     @GetMapping(value = "/mapping-header", headers = "mode=debug")
     public String mappingHeader() {
