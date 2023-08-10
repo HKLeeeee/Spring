@@ -20,6 +20,7 @@ public class ResponseBodyController {
     public void responseBodyV1(HttpServletResponse response) throws IOException {
         response.getWriter().write("ok");
     }
+
     @GetMapping("/response-body-string-v2")
     public ResponseEntity<String> responseBodyV2() throws IOException {
         return new ResponseEntity<>("ok", HttpStatus.OK);
