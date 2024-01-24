@@ -9,16 +9,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class SomeBusinessTest {
 
-	@Autowired
-	private SomeBusinessImpl business;
 	@Test
 	public void calculateSum_basic(){
+		SomeBusinessImpl business = new SomeBusinessImpl();
 		int result = business.calculateSum(new int[] {1,2,3});
 		assertThat(result).isEqualTo(6);
 	}
 
 	@Test
 	public void calculateSum_empty(){
+		SomeBusinessImpl business = new SomeBusinessImpl();
 		int result = business.calculateSum(new int[] {});
 		assertThat(result).isEqualTo(0);
 	}

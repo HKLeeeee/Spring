@@ -1,15 +1,14 @@
 package com.in28miniutes.unittesting.unittesting.business;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Service;
-
 import com.in28miniutes.unittesting.unittesting.data.SomeDataService;
 
-@Service
 public class SomeBusinessImpl {
 
 	private SomeDataService someDataService;
+
+	public void setSomeDataService(SomeDataService someDataService) {
+		this.someDataService = someDataService;
+	}
 
 	public int calculateSum(int[] data){
 		int sum = 0;
