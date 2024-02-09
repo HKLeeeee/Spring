@@ -29,6 +29,10 @@ dependencies {
 
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
+
+	implementation group: 'ch.qos.logback.db', name: 'logback-core-db', version: '1.2.11.1'
+	implementation group: 'ch.qos.logback.db', name: 'logback-classic-db', version: '1.2.11.1'
+
 }
 
 tasks.named('test') {

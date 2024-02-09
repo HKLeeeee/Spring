@@ -14,8 +14,6 @@ public class ThreadLocalLogTrace implements LogTrace{
 
 	@Override
 	public TraceStatus begin(String message) {
-		log.info(Thread.currentThread().getName());
-		log.info("{}", Thread.currentThread().getId());
 		syncTraceId();
 		TraceId traceId = traceHolder.get();
 		Long startTimeMs = System.currentTimeMillis();
