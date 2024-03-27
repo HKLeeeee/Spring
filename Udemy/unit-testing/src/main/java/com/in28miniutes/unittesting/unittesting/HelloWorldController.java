@@ -1,16 +1,17 @@
 package com.in28miniutes.unittesting.unittesting;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.in28miniutes.unittesting.model.Item;
+import com.in28miniutes.unittesting.unittesting.model.Item;
 import com.in28miniutes.unittesting.unittesting.business.ItemBusinessService;
 
-@RestController
-public class HelloWorldController {
-	final ItemBusinessService businessService;
+import lombok.RequiredArgsConstructor;
 
+@RestController
+@RequiredArgsConstructor
+public class HelloWorldController {
+	private ItemBusinessService businessService;
 	public HelloWorldController(ItemBusinessService businessService) {
 		this.businessService = businessService;
 	}
@@ -21,8 +22,10 @@ public class HelloWorldController {
 	}
 
 	@GetMapping("/dummy-item")
+
 	public Item item() {
-		return new Item(1, "Ball", 10, 100);
+		Item item = new Item(1, "Ball", 10, 100);
+		return item;
 	}
 
 	@GetMapping("/item-from-service")
